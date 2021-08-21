@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.http import HttpResponse
+from Calculos.views import suma, resta, multiplicar
 
 def home(request):
     return HttpResponse("<h1>Hola Mundo</h1>")
@@ -23,5 +24,9 @@ def home(request):
 urlpatterns = [
     path('',home),
     path('polls/',include('encuesta.urls')),
+    path('app/',include('Calculos.urls')),
+    path('app/sumar/<int:calculo_id>/<int:calculo2_id>',suma),
+    path('app/restar/<int:calculo_id>/<int:calculo2_id>',resta),
+    path('app/multiplicar/<int:calculo_id>/<int:calculo2_id>',multiplicar),
     path('admin/', admin.site.urls),
 ]

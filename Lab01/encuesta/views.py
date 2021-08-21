@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 def index(request):
-    return HttpResponse("Desde la visa de encuestas!")
+    return HttpResponse("Desde la vista de encuestas!")
 
 def detalle(request,pregunta_id):
     return HttpResponse("Estas viendo la pregunta %s." % pregunta_id)
